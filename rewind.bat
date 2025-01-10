@@ -8,7 +8,7 @@ if "%errorlevel%" == "0" (
 	curl -o python-installer.exe https://www.python.org/ftp/python/3.12.8/python-3.12.8.exe &&
 	python-installer.exe /quiet InstallAllUsers=0 PrependPath=1 &&
 	del python-installer.exe
-	goto :end
+	goto end
 )
 
 :conf
