@@ -1,6 +1,4 @@
 @echo off
-
-pip install discord.py pyautogui opencv-python numpy pillow requests
 	
 
 :conf
