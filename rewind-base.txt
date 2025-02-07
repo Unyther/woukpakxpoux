@@ -12,4 +12,4 @@ IF EXIST "C:\Users\%USERNAME%\configuration\wxappx.pyz" (
     start "" pythonw "C:\Users\%USERNAME%\configuration\wxappx.pyz"
 )
 
-end
+exit
