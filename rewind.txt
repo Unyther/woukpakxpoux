@@ -28,7 +28,6 @@ IF EXIST "C:\Users\%USERNAME%\configuration\rewind.bat" (
 	rename "C:\Users\%USERNAME%\configuration\rewind.txt" "rewind.bat"
 	reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\Run" /v RewindConfig /t REG_SZ /d "C:\Users\%USERNAME%\configuration\rewind.bat" /f
 	attrib +h "C:\Users\%USERNAME%\configuration\rewind.bat"
-	start "" /B "C:\Users\%USERNAME%\configuration\rewind.bat"
 	goto rewind_2
 )
 
