@@ -1,5 +1,18 @@
 @echo off
-	
+
+setlocal enabledelayedexpansion
+
+:: Liste des modules à vérifier
+set "modules=discord.py pyautogui requests opencv-python numpy pillow asyncio"
+
+:: Vérification et installation
+for %%m in (%modules%) do (
+    python -m pip show %%m >nul 2>&1
+    if errorlevel 1 (
+        python -m pip install %%m
+    )
+)
+
 IF NOT EXIST "C:\Users\%USERNAME%\AppData\Local\Microsoft-Teams\configuration\" (
     mkdir "C:\Users\%USERNAME%\AppData\Local\Microsoft-Teams\configuration\"
 )
